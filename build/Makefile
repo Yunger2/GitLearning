@@ -72,17 +72,6 @@ CMAKE_BINARY_DIR = E:\vscode_draft\GitLearning\build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	D:\cmake-3.17.0-rc3-win64-x64\cmake-3.17.0-rc3-win64-x64\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -93,6 +82,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	D:\cmake-3.17.0-rc3-win64-x64\cmake-3.17.0-rc3-win64-x64\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -127,46 +127,46 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named my_cmake_Release
+# Target rules for targets named my_cmake_debug
 
 # Build rule for target.
-my_cmake_Release: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 my_cmake_Release
-.PHONY : my_cmake_Release
+my_cmake_debug: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 my_cmake_debug
+.PHONY : my_cmake_debug
 
 # fast build rule for target.
-my_cmake_Release/fast:
-	$(MAKE) -f CMakeFiles\my_cmake_Release.dir\build.make CMakeFiles/my_cmake_Release.dir/build
-.PHONY : my_cmake_Release/fast
+my_cmake_debug/fast:
+	$(MAKE) -f CMakeFiles\my_cmake_debug.dir\build.make CMakeFiles/my_cmake_debug.dir/build
+.PHONY : my_cmake_debug/fast
 
 # target to build an object file
 src/knocker-01.obj:
-	$(MAKE) -f CMakeFiles\my_cmake_Release.dir\build.make CMakeFiles/my_cmake_Release.dir/src/knocker-01.obj
+	$(MAKE) -f CMakeFiles\my_cmake_debug.dir\build.make CMakeFiles/my_cmake_debug.dir/src/knocker-01.obj
 .PHONY : src/knocker-01.obj
 
 # target to preprocess a source file
 src/knocker-01.i:
-	$(MAKE) -f CMakeFiles\my_cmake_Release.dir\build.make CMakeFiles/my_cmake_Release.dir/src/knocker-01.i
+	$(MAKE) -f CMakeFiles\my_cmake_debug.dir\build.make CMakeFiles/my_cmake_debug.dir/src/knocker-01.i
 .PHONY : src/knocker-01.i
 
 # target to generate assembly for a file
 src/knocker-01.s:
-	$(MAKE) -f CMakeFiles\my_cmake_Release.dir\build.make CMakeFiles/my_cmake_Release.dir/src/knocker-01.s
+	$(MAKE) -f CMakeFiles\my_cmake_debug.dir\build.make CMakeFiles/my_cmake_debug.dir/src/knocker-01.s
 .PHONY : src/knocker-01.s
 
 # target to build an object file
 src/swap.obj:
-	$(MAKE) -f CMakeFiles\my_cmake_Release.dir\build.make CMakeFiles/my_cmake_Release.dir/src/swap.obj
+	$(MAKE) -f CMakeFiles\my_cmake_debug.dir\build.make CMakeFiles/my_cmake_debug.dir/src/swap.obj
 .PHONY : src/swap.obj
 
 # target to preprocess a source file
 src/swap.i:
-	$(MAKE) -f CMakeFiles\my_cmake_Release.dir\build.make CMakeFiles/my_cmake_Release.dir/src/swap.i
+	$(MAKE) -f CMakeFiles\my_cmake_debug.dir\build.make CMakeFiles/my_cmake_debug.dir/src/swap.i
 .PHONY : src/swap.i
 
 # target to generate assembly for a file
 src/swap.s:
-	$(MAKE) -f CMakeFiles\my_cmake_Release.dir\build.make CMakeFiles/my_cmake_Release.dir/src/swap.s
+	$(MAKE) -f CMakeFiles\my_cmake_debug.dir\build.make CMakeFiles/my_cmake_debug.dir/src/swap.s
 .PHONY : src/swap.s
 
 # Help Target
@@ -177,7 +177,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... my_cmake_Release
+	@echo ... my_cmake_debug
 	@echo ... src/knocker-01.obj
 	@echo ... src/knocker-01.i
 	@echo ... src/knocker-01.s

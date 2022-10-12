@@ -33,3 +33,5 @@ else()
     file(COPY lib/libprint.dll DESTINATION ../bin/debug)  #调用动态库时需要将dll复制到exe同一目录下，否则无法运行。
     target_link_libraries(my_cmake_debug libprint.dll)  #调用动态库
 endif()
+
+#终端查看带中文的txt命令： cat .\CMakeLists.txt -Encoding UTF8

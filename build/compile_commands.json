@@ -1,0 +1,12 @@
+[
+{
+  "directory": "E:/vscode_draft/GitLearning/build",
+  "command": "g++   @CMakeFiles/my_cmake_debug.dir/includes_CXX.rsp -g   -o CMakeFiles\\my_cmake_debug.dir\\src\\knocker-01.obj -c E:\\vscode_draft\\GitLearning\\src\\knocker-01.cpp",
+  "file": "E:/vscode_draft/GitLearning/src/knocker-01.cpp"
+},
+{
+  "directory": "E:/vscode_draft/GitLearning/build",
+  "command": "g++   @CMakeFiles/my_cmake_debug.dir/includes_CXX.rsp -g   -o CMakeFiles\\my_cmake_debug.dir\\src\\swap.obj -c E:\\vscode_draft\\GitLearning\\src\\swap.cpp",
+  "file": "E:/vscode_draft/GitLearning/src/swap.cpp"
+}
+]

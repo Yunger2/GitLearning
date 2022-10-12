@@ -1,0 +1,60 @@
+{
+  "version": "2.0.0",
+  "options": {
+    //设置文件路径
+    //"${file}", //表示当前鼠标光标所在的文件 如 ./GitLearning/src/knocker-01.cpp
+    //"${fileDirname}" //表示文件所在的文件夹路径,即${file}上一层 如 ./GitLearning/src
+    //"${workspaceFolder}" 表示工作空间路径，如 ./GitLearning
+    "cwd": "${workspaceFolder}/build" //相当于cd
+  },
+
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "rm_files",
+      "command": "rm -r *" //删除当前目录
+    },
+    {
+      "type": "shell",
+      "label": "cmake_release",
+      "command": "cmake -G 'MinGW Makefiles' -DCMAKE_BUILD_TYPE=Release ..",
+      "args": [],
+      "dependsOn": ["rm_files"]
+    },
+    {
+      "type": "shell",
+      "label": "cmake_debug",
+      "command": "cmake -G 'MinGW Makefiles' ..",
+      "args": [],
+      "dependsOn": ["rm_files"]
+    },
+    {
+      "type": "shell",
+      "label": "Release_make",
+      "command": "mingw32-make.exe",
+      "args": [],
+      "dependsOn": ["cmake_release"]
+    },
+    {
+      "type": "shell",
+      "label": "Debug_make",
+      "command": "mingw32-make.exe",
+      "args": [],
+      "dependsOn": ["cmake_debug"]
+    },
+    {
+      "label": "Build_Release",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "command": "../bin/release/my_cmake_Release.exe",
+      "dependsOn": ["Release_make"]
+    },
+    {
+      "label": "Build_Debug",
+      "dependsOn": ["Debug_make"]
+    }
+  ]
+}

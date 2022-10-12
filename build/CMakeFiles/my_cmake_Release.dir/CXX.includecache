@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/mydlltest.h
+iostream
+-
+
+../include/swap.h
+iostream
+-
+
+E:/vscode_draft/GitLearning/src/knocker-01.cpp
+swap.h
+E:/vscode_draft/GitLearning/src/swap.h
+mydlltest.h
+E:/vscode_draft/GitLearning/src/mydlltest.h
+
+E:/vscode_draft/GitLearning/src/swap.cpp
+swap.h
+E:/vscode_draft/GitLearning/src/swap.h
+

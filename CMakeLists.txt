@@ -35,7 +35,5 @@ else()
 endif()
 
 #终端查看带中文的txt命令： cat .\CMakeLists.txt -Encoding UTF8
-#  hot-fix test
-#   master test
-#  hot-fix test!!!
+#  GitHub push version 1.0
 #_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_
